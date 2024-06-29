@@ -7,6 +7,11 @@ const connection = require('./db')
 const userRoutes = require('./routes/users')
 const authRoutes = require('./routes/auth')
 
+app.use(cors({
+    origin: 'https://cmed-client.vercel.app', // Allow only this origin
+    methods: 'GET, POST, PUT, DELETE, OPTIONS',
+    allowedHeaders: 'Content-Type, Authorization'
+}));
 
 //database connection
 connection();
